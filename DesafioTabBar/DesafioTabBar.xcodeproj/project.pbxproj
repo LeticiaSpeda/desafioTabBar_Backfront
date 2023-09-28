@@ -14,6 +14,7 @@
 		E0CFA5FE2AC5B6170082585E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CFA5FC2AC5B6170082585E /* LaunchScreen.storyboard */; };
 		E0CFA6092AC5BAC00082585E /* ContatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */; };
 		E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA60A2AC5BB910082585E /* PersonViewController.swift */; };
+		E0CFA60D2AC5BD0D0082585E /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA60C2AC5BD0D0082585E /* TrashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E0CFA5FF2AC5B6170082585E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatsViewController.swift; sourceTree = "<group>"; };
 		E0CFA60A2AC5BB910082585E /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		E0CFA60C2AC5BD0D0082585E /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */,
 				E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */,
 				E0CFA60A2AC5BB910082585E /* PersonViewController.swift */,
+				E0CFA60C2AC5BD0D0082585E /* TrashViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */,
 				E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */,
 				E0CFA6092AC5BAC00082585E /* ContatsViewController.swift in Sources */,
+				E0CFA60D2AC5BD0D0082585E /* TrashViewController.swift in Sources */,
 				E0CFA5F22AC5B6150082585E /* AppDelegate.swift in Sources */,
 				E0CFA5F42AC5B6150082585E /* SceneDelegate.swift in Sources */,
 			);
