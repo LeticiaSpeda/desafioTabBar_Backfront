@@ -15,6 +15,7 @@
 		E0CFA6092AC5BAC00082585E /* ContatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */; };
 		E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA60A2AC5BB910082585E /* PersonViewController.swift */; };
 		E0CFA60D2AC5BD0D0082585E /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA60C2AC5BD0D0082585E /* TrashViewController.swift */; };
+		E0CFA6122AC5C1020082585E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA6112AC5C1020082585E /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatsViewController.swift; sourceTree = "<group>"; };
 		E0CFA60A2AC5BB910082585E /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		E0CFA60C2AC5BD0D0082585E /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
+		E0CFA6112AC5C1020082585E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				E0CFA6072AC5B9350082585E /* Views */,
+				E0CFA60F2AC5C0DC0082585E /* Helpers */,
 				E0CFA5FF2AC5B6170082585E /* Info.plist */,
 				E0CFA6052AC5B64C0082585E /* Aplication */,
 				E0CFA6062AC5B6540082585E /* Assets */,
@@ -89,12 +92,28 @@
 		E0CFA6072AC5B9350082585E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */,
-				E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */,
+				E0CFA60E2AC5BE8C0082585E /* TabBarController */,
 				E0CFA60A2AC5BB910082585E /* PersonViewController.swift */,
+				E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */,
 				E0CFA60C2AC5BD0D0082585E /* TrashViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E0CFA60E2AC5BE8C0082585E /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		E0CFA60F2AC5C0DC0082585E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E0CFA6112AC5C1020082585E /* UIView+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */,
+				E0CFA6122AC5C1020082585E /* UIView+Extension.swift in Sources */,
 				E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */,
 				E0CFA6092AC5BAC00082585E /* ContatsViewController.swift in Sources */,
 				E0CFA60D2AC5BD0D0082585E /* TrashViewController.swift in Sources */,
