@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		E0CFA5F22AC5B6150082585E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F12AC5B6150082585E /* AppDelegate.swift */; };
 		E0CFA5F42AC5B6150082585E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */; };
-		E0CFA5F62AC5B6150082585E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F52AC5B6150082585E /* ViewController.swift */; };
+		E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */; };
 		E0CFA5FB2AC5B6170082585E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CFA5FA2AC5B6170082585E /* Assets.xcassets */; };
 		E0CFA5FE2AC5B6170082585E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CFA5FC2AC5B6170082585E /* LaunchScreen.storyboard */; };
+		E0CFA6092AC5BAC00082585E /* ContatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */; };
+		E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA60A2AC5BB910082585E /* PersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E0CFA5EE2AC5B6150082585E /* DesafioTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CFA5F12AC5B6150082585E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0CFA5F52AC5B6150082585E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E0CFA5FA2AC5B6170082585E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0CFA5FD2AC5B6170082585E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0CFA5FF2AC5B6170082585E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatsViewController.swift; sourceTree = "<group>"; };
+		E0CFA60A2AC5BB910082585E /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,7 @@
 		E0CFA5F02AC5B6150082585E /* DesafioTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				E0CFA5F52AC5B6150082585E /* ViewController.swift */,
+				E0CFA6072AC5B9350082585E /* Views */,
 				E0CFA5FF2AC5B6170082585E /* Info.plist */,
 				E0CFA6052AC5B64C0082585E /* Aplication */,
 				E0CFA6062AC5B6540082585E /* Assets */,
@@ -78,6 +82,16 @@
 				E0CFA5FA2AC5B6170082585E /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		E0CFA6072AC5B9350082585E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */,
+				E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */,
+				E0CFA60A2AC5BB910082585E /* PersonViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0CFA5F62AC5B6150082585E /* ViewController.swift in Sources */,
+				E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */,
+				E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */,
+				E0CFA6092AC5BAC00082585E /* ContatsViewController.swift in Sources */,
 				E0CFA5F22AC5B6150082585E /* AppDelegate.swift in Sources */,
 				E0CFA5F42AC5B6150082585E /* SceneDelegate.swift in Sources */,
 			);
