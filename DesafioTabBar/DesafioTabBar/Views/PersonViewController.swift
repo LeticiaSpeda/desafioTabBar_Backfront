@@ -4,7 +4,6 @@ final class PersonViewController: UIViewController {
     
     private lazy var informationsView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray.withAlphaComponent(0.4)
         view.translate()
         return view
     }()
@@ -13,6 +12,13 @@ final class PersonViewController: UIViewController {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 10
+        stack.translate()
+        return stack
+    }()
+    
+    private lazy var mainTableVStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
         stack.translate()
         return stack
     }()
@@ -53,8 +59,8 @@ final class PersonViewController: UIViewController {
     
     private lazy var nameTextFiel: UITextField = {
         let label = UITextField()
-        label.placeholder = "Digite seu nome"
         label.backgroundColor = .white
+        label.attributedPlaceholder = NSAttributedString(string: "Digite seu nome", attributes: [.foregroundColor: UIColor.black])
         label.layer.cornerRadius = 6
         label.translate()
         return label
@@ -66,6 +72,15 @@ final class PersonViewController: UIViewController {
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         return button
+    }()
+    
+    private lazy var listContactsTableView : UITableView = {
+        let table = UITableView()
+        table.register(ListContactCell.self, forCellReuseIdentifier: ListContactCell.identifier)
+        table.delegate = self
+        table.dataSource = self
+        table.translate()
+        return table
     }()
     
     override func viewDidLoad() {
@@ -81,17 +96,22 @@ final class PersonViewController: UIViewController {
     
     private func configureHierarchy() {
         view.addSubview(informationsView)
+        view.addSubview(mainTableVStackView)
         
         informationsView.addSubview(mainVStackView)
         
-        mainVStackView.addArrangedSubview(photoView)
         photoView.addSubview(userPhotoImage)
+        
+        mainVStackView.addArrangedSubview(photoView)
         mainVStackView.addArrangedSubview(selectImageButton)
         mainVStackView.addArrangedSubview(nameLabel)
         mainVStackView.addArrangedSubview(nameTextFiel)
         mainVStackView.addArrangedSubview(UIView())
         mainVStackView.addArrangedSubview(addImageButton)
         mainVStackView.addArrangedSubview(UIView())
+        
+        
+        mainTableVStackView.addArrangedSubview(listContactsTableView)
     }
     
     private func configureConstraints() {
@@ -114,10 +134,33 @@ final class PersonViewController: UIViewController {
             
             nameTextFiel.heightAnchor.constraint(equalToConstant: 28),
             
+            mainTableVStackView.topAnchor.constraint(equalTo: informationsView.bottomAnchor),
+            mainTableVStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            mainTableVStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            mainTableVStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
         ])
     }
     
     private func configureStyle() {
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.7312184343, green: 0.7312184343, blue: 0.7312184343, alpha: 1)
     }
+}
+
+
+extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return ListContactCell()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
+    }
+    
 }

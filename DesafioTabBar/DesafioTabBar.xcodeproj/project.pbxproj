@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E02D76A02AC8AED8006968F4 /* ListContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D769F2AC8AED8006968F4 /* ListContactCell.swift */; };
 		E0CFA5F22AC5B6150082585E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F12AC5B6150082585E /* AppDelegate.swift */; };
 		E0CFA5F42AC5B6150082585E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */; };
 		E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E02D769F2AC8AED8006968F4 /* ListContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactCell.swift; sourceTree = "<group>"; };
 		E0CFA5EE2AC5B6150082585E /* DesafioTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CFA5F12AC5B6150082585E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E02D769E2AC8AEB7006968F4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E02D769F2AC8AED8006968F4 /* ListContactCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E0CFA5E52AC5B6150082585E = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				E0CFA6072AC5B9350082585E /* Views */,
-				E0CFA60F2AC5C0DC0082585E /* Helpers */,
 				E0CFA5FF2AC5B6170082585E /* Info.plist */,
+				E0CFA60F2AC5C0DC0082585E /* Helpers */,
 				E0CFA6052AC5B64C0082585E /* Aplication */,
 				E0CFA6062AC5B6540082585E /* Assets */,
 			);
@@ -92,6 +102,7 @@
 		E0CFA6072AC5B9350082585E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E02D769E2AC8AEB7006968F4 /* Cell */,
 				E0CFA60E2AC5BE8C0082585E /* TabBarController */,
 				E0CFA60A2AC5BB910082585E /* PersonViewController.swift */,
 				E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */,
@@ -186,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02D76A02AC8AED8006968F4 /* ListContactCell.swift in Sources */,
 				E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */,
 				E0CFA6122AC5C1020082585E /* UIView+Extension.swift in Sources */,
 				E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */,
