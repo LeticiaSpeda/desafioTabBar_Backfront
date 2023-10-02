@@ -56,22 +56,26 @@ final class ListContactCell: UITableViewCell {
         
         mainHStackView.addArrangedSubview(nameContactLabel)
         
-        
         photoView.addSubview(photoContactImage)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-            mainHStackView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
-            mainHStackView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
-            mainHStackView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
-            mainHStackView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor),
+            mainHStackView.topAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.topAnchor
+            ),
+            mainHStackView.leadingAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.leadingAnchor
+            ),
+            mainHStackView.trailingAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.trailingAnchor
+            ),
+            mainHStackView.bottomAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.bottomAnchor
+            ),
             
-//            photoView.heightAnchor.constraint(equalToConstant: 90),
             photoView.widthAnchor.constraint(equalToConstant: 100),
             
-            
-//            photoContactImage.heightAnchor.constraint(equalToConstant: 90),
             photoContactImage.widthAnchor.constraint(equalToConstant: 100),
             photoContactImage.topAnchor.constraint(equalTo: photoView.topAnchor),
             photoContactImage.bottomAnchor.constraint(equalTo: photoView.bottomAnchor),

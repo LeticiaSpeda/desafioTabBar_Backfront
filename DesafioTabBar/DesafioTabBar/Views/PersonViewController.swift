@@ -60,7 +60,10 @@ final class PersonViewController: UIViewController {
     private lazy var nameTextFiel: UITextField = {
         let label = UITextField()
         label.backgroundColor = .white
-        label.attributedPlaceholder = NSAttributedString(string: "Digite seu nome", attributes: [.foregroundColor: UIColor.black])
+        label.attributedPlaceholder = NSAttributedString(
+            string: "Digite seu nome",
+            attributes: [.foregroundColor: UIColor.black]
+        )
         label.layer.cornerRadius = 6
         label.translate()
         return label
@@ -76,7 +79,10 @@ final class PersonViewController: UIViewController {
     
     private lazy var listContactsTableView : UITableView = {
         let table = UITableView()
-        table.register(ListContactCell.self, forCellReuseIdentifier: ListContactCell.identifier)
+        table.register(
+            ListContactCell.self,
+            forCellReuseIdentifier: ListContactCell.identifier
+        )
         table.delegate = self
         table.dataSource = self
         table.translate()
@@ -110,35 +116,60 @@ final class PersonViewController: UIViewController {
         mainVStackView.addArrangedSubview(addImageButton)
         mainVStackView.addArrangedSubview(UIView())
         
-        
         mainTableVStackView.addArrangedSubview(listContactsTableView)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-            informationsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            informationsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            informationsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            informationsView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor
+            ),
+            informationsView.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor
+            ),
+            informationsView.trailingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.trailingAnchor
+            ),
             informationsView.heightAnchor.constraint(equalToConstant: 400),
-            informationsView.bottomAnchor.constraint(equalTo: mainVStackView.bottomAnchor),
+            informationsView.bottomAnchor.constraint(
+                equalTo: mainVStackView.bottomAnchor
+            ),
             
-            mainVStackView.topAnchor.constraint(equalTo: informationsView.topAnchor, constant: 10),
-            mainVStackView.leadingAnchor.constraint(equalTo: informationsView.leadingAnchor, constant: 10),
-            mainVStackView.trailingAnchor.constraint(equalTo: informationsView.trailingAnchor, constant: -10),
+            mainVStackView.topAnchor.constraint(
+                equalTo: informationsView.topAnchor,
+                constant: 10
+            ),
+            mainVStackView.leadingAnchor.constraint(
+                equalTo: informationsView.leadingAnchor,
+                constant: 10
+            ),
+            mainVStackView.trailingAnchor.constraint(
+                equalTo: informationsView.trailingAnchor,
+                constant: -10
+            ),
             
             photoView.heightAnchor.constraint(equalToConstant: 150),
             
-            userPhotoImage.centerXAnchor.constraint(equalTo: photoView.centerXAnchor),
+            userPhotoImage.centerXAnchor.constraint(
+                equalTo: photoView.centerXAnchor
+            ),
             userPhotoImage.heightAnchor.constraint(equalToConstant: 150),
             userPhotoImage.widthAnchor.constraint(equalToConstant: 150),
             
             nameTextFiel.heightAnchor.constraint(equalToConstant: 28),
             
-            mainTableVStackView.topAnchor.constraint(equalTo: informationsView.bottomAnchor),
-            mainTableVStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            mainTableVStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            mainTableVStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            
+            mainTableVStackView.topAnchor.constraint(
+                equalTo: informationsView.bottomAnchor
+            ),
+            mainTableVStackView.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor
+            ),
+            mainTableVStackView.trailingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.trailingAnchor
+            ),
+            mainTableVStackView.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor
+            ),
         ])
     }
     
@@ -146,7 +177,6 @@ final class PersonViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.7312184343, green: 0.7312184343, blue: 0.7312184343, alpha: 1)
     }
 }
-
 
 extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
