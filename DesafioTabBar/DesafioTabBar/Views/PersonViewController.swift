@@ -30,22 +30,12 @@ final class PersonViewController: UIViewController {
     }()
     
     private lazy var userPhotoImage: UIImageView = {
-        let imgView = UIImageView(image: .teste)
-        imgView.contentMode = .scaleAspectFit
-        
-        imgView.backgroundColor = .red
+        let imgView = UIImageView(image: UIImage.user)
+        imgView.contentMode = .scaleAspectFill
         imgView.layer.masksToBounds = true
         imgView.layer.cornerRadius = 150 / 2
         imgView.translate()
         return imgView
-    }()
-    
-    private lazy var selectImageButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Editar Foto", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        return button
     }()
     
     private lazy var nameLabel: UILabel = {
@@ -69,12 +59,26 @@ final class PersonViewController: UIViewController {
         return label
     }()
     
+    private lazy var selectImageButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Editar Foto", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        return button
+    }()
+    
     private lazy var addImageButton: UIButton = {
         let button = UIButton()
         button.setTitle("Adicionar", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         return button
+    }()
+    
+    private lazy var imagePicker: UIImagePickerController = {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        return picker
     }()
     
     private lazy var listContactsTableView : UITableView = {
@@ -94,10 +98,21 @@ final class PersonViewController: UIViewController {
         commonInit()
     }
     
+    @objc func handleImageContact() {
+        imagePicker.allowsEditing = false
+        
+        present(imagePicker, animated: true)
+    }
+    
     private func commonInit() {
         configureHierarchy()
+        configureActions()
         configureConstraints()
         configureStyle()
+    }
+    
+    private func configureActions() {
+        selectImageButton.addTarget(self, action: #selector(handleImageContact), for: .touchUpInside)
     }
     
     private func configureHierarchy() {
@@ -193,4 +208,16 @@ extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
         return 5
     }
     
+}
+
+extension PersonViewController: UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.userPhotoImage.image = image
+        }
+        
+        picker.dismiss(animated: true)
+    }
 }
