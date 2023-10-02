@@ -1,6 +1,8 @@
 import UIKit
 
-final class PersonViewController: UIViewController {
+final class PersonViewController: UIViewController, UITextFieldDelegate {
+    
+    var data: [Profile] = []
     
     private lazy var informationsView: UIView = {
         let view = UIView()
@@ -48,16 +50,26 @@ final class PersonViewController: UIViewController {
     }()
     
     private lazy var nameTextFiel: UITextField = {
-        let label = UITextField()
-        label.backgroundColor = .white
-        label.attributedPlaceholder = NSAttributedString(
+        let textField = UITextField()
+        textField.backgroundColor = .white
+        textField.attributedPlaceholder = NSAttributedString(
             string: "Digite seu nome",
             attributes: [.foregroundColor: UIColor.black]
         )
-        label.layer.cornerRadius = 6
-        label.translate()
-        return label
+        textField.delegate = self
+        textField.textColor = .black
+        textField.layer.cornerRadius = 6
+        textField.keyboardAppearance = .default
+        textField.returnKeyType = .done
+        textField.translate()
+        return textField
     }()
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextFiel.resignFirstResponder()
+        return true
+        
+    }
     
     private lazy var selectImageButton: UIButton = {
         let button = UIButton()
@@ -87,6 +99,7 @@ final class PersonViewController: UIViewController {
             ListContactCell.self,
             forCellReuseIdentifier: ListContactCell.identifier
         )
+        table.backgroundColor = .white
         table.delegate = self
         table.dataSource = self
         table.translate()
@@ -104,15 +117,23 @@ final class PersonViewController: UIViewController {
         present(imagePicker, animated: true)
     }
     
+    @objc func handleAddImage() {
+        data.append(Profile(name: nameTextFiel.text ?? "", photo: userPhotoImage.image ?? UIImage()))
+        
+        listContactsTableView.reloadData()
+    }
+    
     private func commonInit() {
-        configureHierarchy()
         configureActions()
+        configureHierarchy()
         configureConstraints()
         configureStyle()
     }
     
     private func configureActions() {
         selectImageButton.addTarget(self, action: #selector(handleImageContact), for: .touchUpInside)
+        
+        addImageButton.addTarget(self, action: #selector(handleAddImage), for: .touchUpInside)
     }
     
     private func configureHierarchy() {
@@ -196,16 +217,15 @@ final class PersonViewController: UIViewController {
 extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return ListContactCell()
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        let cell = ListContactCell()
+        cell.setupCell(profile: data[indexPath.row])
+        
+        return cell
     }
     
 }

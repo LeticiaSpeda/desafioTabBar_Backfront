@@ -20,7 +20,7 @@ final class ListContactCell: UITableViewCell {
     private lazy var photoContactImage: UIImageView = {
         let imgView = UIImageView(image: UIImage.teste)
         imgView.layer.masksToBounds = true
-        imgView.layer.cornerRadius = 100 / 2
+        imgView.layer.cornerRadius = 80 / 2
         imgView.contentMode = .scaleAspectFill
         imgView.translate()
         return imgView
@@ -28,7 +28,6 @@ final class ListContactCell: UITableViewCell {
     
     private lazy var nameContactLabel: UILabel = {
         let label = UILabel()
-        label.text = "Leticia"
         label.textColor = .black
         label.font = .systemFont(ofSize: 16)
         return label
@@ -48,6 +47,11 @@ final class ListContactCell: UITableViewCell {
         configureStyle()
     }
     
+    func setupCell(profile: Profile) {
+        nameContactLabel.text = profile.name
+        photoContactImage.image = profile.photo
+    }
+    
     private func configureHierarchy() {
         addSubview(mainHStackView)
         
@@ -55,6 +59,7 @@ final class ListContactCell: UITableViewCell {
         mainHStackView.addArrangedSubview(photoContactImage)
         
         mainHStackView.addArrangedSubview(nameContactLabel)
+        mainHStackView.addArrangedSubview(UIView())
         
         photoView.addSubview(photoContactImage)
     }
@@ -62,21 +67,22 @@ final class ListContactCell: UITableViewCell {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             mainHStackView.topAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.topAnchor
+                equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 10
             ),
             mainHStackView.leadingAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.leadingAnchor
+                equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 10
             ),
             mainHStackView.trailingAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.trailingAnchor
+                equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -10
             ),
             mainHStackView.bottomAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.bottomAnchor
+                equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -10
             ),
             
-            photoView.widthAnchor.constraint(equalToConstant: 100),
+            photoView.widthAnchor.constraint(equalToConstant: 80),
             
-            photoContactImage.widthAnchor.constraint(equalToConstant: 100),
+            
+            photoContactImage.widthAnchor.constraint(equalToConstant: 80),
             photoContactImage.topAnchor.constraint(equalTo: photoView.topAnchor),
             photoContactImage.bottomAnchor.constraint(equalTo: photoView.bottomAnchor),
             
@@ -86,5 +92,6 @@ final class ListContactCell: UITableViewCell {
     
     private func configureStyle() {
         backgroundColor = .white
+        selectionStyle = .none
     }
 }
