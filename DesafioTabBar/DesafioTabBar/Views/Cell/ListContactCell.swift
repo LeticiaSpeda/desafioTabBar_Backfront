@@ -3,7 +3,10 @@ import UIKit
 final class ListContactCell: UITableViewCell {
     static let identifier = String(describing: ListContactCell.self)
     
-    private lazy var mainHStackView = UIStackViewControllerCuston.init(orientation: .horizontal, spaceComponents: 8)
+    private lazy var mainHStackView = UIStackViewControllerCuston.init(
+        orientation: .horizontal,
+        spaceComponents: 8
+    )
     
     private lazy var photoView = UIViewCuston()
     
@@ -56,16 +59,20 @@ final class ListContactCell: UITableViewCell {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             mainHStackView.topAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 10
+                equalTo: contentView.safeAreaLayoutGuide.topAnchor,
+                constant: 10
             ),
             mainHStackView.leadingAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 10
+                equalTo: contentView.safeAreaLayoutGuide.leadingAnchor,
+                constant: 10
             ),
             mainHStackView.trailingAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -10
+                equalTo: contentView.safeAreaLayoutGuide.trailingAnchor,
+                constant: -10
             ),
             mainHStackView.bottomAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -10
+                equalTo: contentView.safeAreaLayoutGuide.bottomAnchor,
+                constant: -10
             ),
             
             photoView.widthAnchor.constraint(equalToConstant: 80),

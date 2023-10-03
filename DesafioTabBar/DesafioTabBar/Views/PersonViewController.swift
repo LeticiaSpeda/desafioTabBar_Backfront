@@ -8,9 +8,15 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var photoView = UIViewCuston()
     
-    private lazy var mainVStackView = UIStackViewControllerCuston.init(orientation: .vertical, spaceComponents: 10)
+    private lazy var mainVStackView = UIStackViewControllerCuston.init(
+        orientation: .vertical,
+        spaceComponents: 10
+    )
     
-    private lazy var mainTableVStackView = UIStackViewControllerCuston.init(orientation: .vertical, spaceComponents: 0)
+    private lazy var mainTableVStackView = UIStackViewControllerCuston.init(
+        orientation: .vertical,
+        spaceComponents: 0
+    )
 
     private lazy var userPhotoImage: UIImageView = {
         let imgView = UIImageView(image: UIImage.user)
@@ -46,15 +52,17 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
         return textField
     }()
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameTextFiel.resignFirstResponder()
-        return true
-    }
     
-    private lazy var selectImageButton = UIButtonCuston(titleButton: "Editar Foto", colorButton: .blue, fontButton: .boldSystemFont(ofSize: 16))
+    private lazy var selectImageButton = UIButtonCuston(
+        titleButton: "Editar Foto",
+        colorButton: .blue,
+        fontButton: .boldSystemFont(ofSize: 16))
     
-    private lazy var addImageButton = UIButtonCuston(titleButton: "Adicionar", colorButton: .blue, fontButton: .boldSystemFont(ofSize: 16))
-    
+    private lazy var addImageButton = UIButtonCuston(
+        titleButton: "Adicionar",
+        colorButton: .blue,
+        fontButton: .boldSystemFont(ofSize: 16)
+    )
     
     private lazy var imagePicker: UIImagePickerController = {
         let picker = UIImagePickerController()
@@ -87,11 +95,20 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleAddImage() {
-        data.append(Profile(name: nameTextFiel.text ?? "", photo: userPhotoImage.image ?? UIImage()))
-        
+        data.append(
+            Profile(
+                name: nameTextFiel.text ?? "",
+                photo: userPhotoImage.image ?? UIImage()
+            )
+        )
         listContactsTableView.reloadData()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextFiel.resignFirstResponder()
+        return true
+    }
+ 
     private func commonInit() {
         configureActions()
         configureHierarchy()
@@ -100,9 +117,16 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func configureActions() {
-        selectImageButton.addTarget(self, action: #selector(handleImageContact), for: .touchUpInside)
+        selectImageButton.addTarget(
+            self,
+            action: #selector(handleImageContact),
+            for: .touchUpInside)
         
-        addImageButton.addTarget(self, action: #selector(handleAddImage), for: .touchUpInside)
+        addImageButton.addTarget(
+            self,
+            action: #selector(handleAddImage),
+            for: .touchUpInside
+        )
     }
     
     private func configureHierarchy() {
@@ -184,12 +208,18 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         
         return data.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         
         let cell = ListContactCell()
         cell.setupCell(profile: data[indexPath.row])
@@ -201,7 +231,10 @@ extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension PersonViewController: UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+    ) {
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.userPhotoImage.image = image

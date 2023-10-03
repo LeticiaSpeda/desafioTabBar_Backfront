@@ -130,11 +130,11 @@
 		E0CFA6072AC5B9350082585E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E02D769E2AC8AEB7006968F4 /* Cell */,
-				E0CFA60E2AC5BE8C0082585E /* TabBarController */,
 				E0CFA60A2AC5BB910082585E /* PersonViewController.swift */,
 				E0CFA6082AC5BAC00082585E /* ContatsViewController.swift */,
 				E0CFA60C2AC5BD0D0082585E /* TrashViewController.swift */,
+				E02D769E2AC8AEB7006968F4 /* Cell */,
+				E0CFA60E2AC5BE8C0082585E /* TabBarController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
