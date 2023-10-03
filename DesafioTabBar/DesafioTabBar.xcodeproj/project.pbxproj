@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E02D76A02AC8AED8006968F4 /* ListContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D769F2AC8AED8006968F4 /* ListContactCell.swift */; };
 		E02D76A32ACB1020006968F4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D76A22ACB1020006968F4 /* Profile.swift */; };
+		E02D76A62ACC55E5006968F4 /* UIStackViewControllerCuston.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D76A52ACC55E5006968F4 /* UIStackViewControllerCuston.swift */; };
+		E02D76A82ACC5830006968F4 /* UIViewCuston.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D76A72ACC5830006968F4 /* UIViewCuston.swift */; };
 		E0CFA5F22AC5B6150082585E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F12AC5B6150082585E /* AppDelegate.swift */; };
 		E0CFA5F42AC5B6150082585E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */; };
 		E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		E02D769F2AC8AED8006968F4 /* ListContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactCell.swift; sourceTree = "<group>"; };
 		E02D76A22ACB1020006968F4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E02D76A52ACC55E5006968F4 /* UIStackViewControllerCuston.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewControllerCuston.swift; sourceTree = "<group>"; };
+		E02D76A72ACC5830006968F4 /* UIViewCuston.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCuston.swift; sourceTree = "<group>"; };
 		E0CFA5EE2AC5B6150082585E /* DesafioTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CFA5F12AC5B6150082585E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E02D76A42ACC559D006968F4 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				E02D76A52ACC55E5006968F4 /* UIStackViewControllerCuston.swift */,
+				E02D76A72ACC5830006968F4 /* UIViewCuston.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		E0CFA5E52AC5B6150082585E = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				E0CFA6072AC5B9350082585E /* Views */,
-				E02D76A12ACB1013006968F4 /* Model */,
 				E0CFA5FF2AC5B6170082585E /* Info.plist */,
+				E02D76A42ACC559D006968F4 /* Commons */,
+				E02D76A12ACB1013006968F4 /* Model */,
 				E0CFA60F2AC5C0DC0082585E /* Helpers */,
 				E0CFA6052AC5B64C0082585E /* Aplication */,
 				E0CFA6062AC5B6540082585E /* Assets */,
@@ -209,12 +223,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E02D76A02AC8AED8006968F4 /* ListContactCell.swift in Sources */,
+				E02D76A82ACC5830006968F4 /* UIViewCuston.swift in Sources */,
 				E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */,
 				E0CFA6122AC5C1020082585E /* UIView+Extension.swift in Sources */,
 				E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */,
 				E0CFA6092AC5BAC00082585E /* ContatsViewController.swift in Sources */,
 				E0CFA60D2AC5BD0D0082585E /* TrashViewController.swift in Sources */,
 				E0CFA5F22AC5B6150082585E /* AppDelegate.swift in Sources */,
+				E02D76A62ACC55E5006968F4 /* UIStackViewControllerCuston.swift in Sources */,
 				E02D76A32ACB1020006968F4 /* Profile.swift in Sources */,
 				E0CFA5F42AC5B6150082585E /* SceneDelegate.swift in Sources */,
 			);

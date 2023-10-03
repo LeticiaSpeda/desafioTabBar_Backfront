@@ -4,32 +4,14 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
     
     var data: [Profile] = []
     
-    private lazy var informationsView: UIView = {
-        let view = UIView()
-        view.translate()
-        return view
-    }()
+    private lazy var informationsView = UIViewCuston()
     
-    private lazy var mainVStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 10
-        stack.translate()
-        return stack
-    }()
+    private lazy var photoView = UIViewCuston()
     
-    private lazy var mainTableVStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.translate()
-        return stack
-    }()
+    private lazy var mainVStackView = UIStackViewControllerCuston.init(orientation: .vertical, spaceComponents: 10)
     
-    private lazy var photoView: UIView = {
-        let view = UIView()
-        view.translate()
-        return view
-    }()
+    private lazy var mainTableVStackView = UIStackViewControllerCuston.init(orientation: .vertical, spaceComponents: 0)
+
     
     private lazy var userPhotoImage: UIImageView = {
         let imgView = UIImageView(image: UIImage.user)

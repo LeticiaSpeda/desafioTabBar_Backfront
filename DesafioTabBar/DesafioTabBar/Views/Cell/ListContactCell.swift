@@ -3,19 +3,9 @@ import UIKit
 final class ListContactCell: UITableViewCell {
     static let identifier = String(describing: ListContactCell.self)
     
-    private lazy var mainHStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 8
-        stack.translate()
-        return stack
-    }()
+    private lazy var mainHStackView = UIStackViewControllerCuston.init(orientation: .horizontal, spaceComponents: 8)
     
-    private lazy var photoView: UIView = {
-        let view = UIView()
-        view.translate()
-        return view
-    }()
+    private lazy var photoView = UIViewCuston()
     
     private lazy var photoContactImage: UIImageView = {
         let imgView = UIImageView(image: UIImage.teste)
@@ -39,7 +29,6 @@ final class ListContactCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) { nil }
-    
     
     private func commonInit() {
         configureHierarchy()
