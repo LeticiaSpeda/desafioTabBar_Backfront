@@ -12,7 +12,6 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var mainTableVStackView = UIStackViewControllerCuston.init(orientation: .vertical, spaceComponents: 0)
 
-    
     private lazy var userPhotoImage: UIImageView = {
         let imgView = UIImageView(image: UIImage.user)
         imgView.contentMode = .scaleAspectFill
@@ -50,24 +49,12 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextFiel.resignFirstResponder()
         return true
-        
     }
     
-    private lazy var selectImageButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Editar Foto", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        return button
-    }()
+    private lazy var selectImageButton = UIButtonCuston(titleButton: "Editar Foto", colorButton: .blue, fontButton: .boldSystemFont(ofSize: 16))
     
-    private lazy var addImageButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Adicionar", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        return button
-    }()
+    private lazy var addImageButton = UIButtonCuston(titleButton: "Adicionar", colorButton: .blue, fontButton: .boldSystemFont(ofSize: 16))
+    
     
     private lazy var imagePicker: UIImagePickerController = {
         let picker = UIImagePickerController()
