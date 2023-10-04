@@ -12,6 +12,7 @@
 		E02D76A82ACC5830006968F4 /* UIViewCuston.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D76A72ACC5830006968F4 /* UIViewCuston.swift */; };
 		E02D76AC2ACC5EA8006968F4 /* UIButtonCuston.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D76AB2ACC5EA8006968F4 /* UIButtonCuston.swift */; };
 		E02D76AE2ACC6098006968F4 /* UIStackViewControllerCuston.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D76AD2ACC6098006968F4 /* UIStackViewControllerCuston.swift */; };
+		E02D76B02ACCA624006968F4 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D76AF2ACCA624006968F4 /* AlertController.swift */; };
 		E0CFA5F22AC5B6150082585E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F12AC5B6150082585E /* AppDelegate.swift */; };
 		E0CFA5F42AC5B6150082585E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */; };
 		E0CFA5F62AC5B6150082585E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CFA5F52AC5B6150082585E /* MainTabBarController.swift */; };
@@ -29,6 +30,7 @@
 		E02D76A72ACC5830006968F4 /* UIViewCuston.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCuston.swift; sourceTree = "<group>"; };
 		E02D76AB2ACC5EA8006968F4 /* UIButtonCuston.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCuston.swift; sourceTree = "<group>"; };
 		E02D76AD2ACC6098006968F4 /* UIStackViewControllerCuston.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewControllerCuston.swift; sourceTree = "<group>"; };
+		E02D76AF2ACCA624006968F4 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E0CFA5EE2AC5B6150082585E /* DesafioTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CFA5F12AC5B6150082585E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CFA5F32AC5B6150082585E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
+		E02D76B12ACCA755006968F4 /* AlertController */ = {
+			isa = PBXGroup;
+			children = (
+				E02D76AF2ACCA624006968F4 /* AlertController.swift */,
+			);
+			path = AlertController;
+			sourceTree = "<group>";
+		};
 		E0CFA5E52AC5B6150082585E = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		E0CFA5F02AC5B6150082585E /* DesafioTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				E02D76B12ACCA755006968F4 /* AlertController */,
 				E0CFA6072AC5B9350082585E /* Views */,
 				E0CFA5FF2AC5B6170082585E /* Info.plist */,
 				E02D76A42ACC559D006968F4 /* Commons */,
@@ -225,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02D76B02ACCA624006968F4 /* AlertController.swift in Sources */,
 				E02D76A02AC8AED8006968F4 /* ListContactCell.swift in Sources */,
 				E02D76A82ACC5830006968F4 /* UIViewCuston.swift in Sources */,
 				E0CFA60B2AC5BB910082585E /* PersonViewController.swift in Sources */,

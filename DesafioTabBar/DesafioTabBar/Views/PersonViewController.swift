@@ -3,6 +3,7 @@ import UIKit
 final class PersonViewController: UIViewController, UITextFieldDelegate {
     
     var data: [Profile] = []
+    var alert: AlertController?
     
     private lazy var informationsView = UIViewCuston()
     
@@ -17,7 +18,7 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
         orientation: .vertical,
         spaceComponents: 0
     )
-
+    
     private lazy var userPhotoImage: UIImageView = {
         let imgView = UIImageView(image: UIImage.user)
         imgView.contentMode = .scaleAspectFill
@@ -52,7 +53,6 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
         return textField
     }()
     
-    
     private lazy var selectImageButton = UIButtonCuston(
         titleButton: "Editar Foto",
         colorButton: .blue,
@@ -85,30 +85,53 @@ final class PersonViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        alert = AlertController(controller: self)
         commonInit()
     }
     
     @objc func handleImageContact() {
-        imagePicker.allowsEditing = false
-        
-        present(imagePicker, animated: true)
+        self.alert?.choseImage(completion: { option in
+            switch option {
+            case .camera:
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    self.imagePicker.sourceType = .camera
+                } else {
+                    self.imagePicker.sourceType = .photoLibrary
+                }
+                self.present(self.imagePicker, animated: true)
+                
+            case .library:
+                self.imagePicker.sourceType = .photoLibrary
+                self.present(self.imagePicker, animated: true)
+                
+            case .cancel:
+                break
+            }
+        })
     }
     
     @objc func handleAddImage() {
-        data.append(
-            Profile(
-                name: nameTextFiel.text ?? "",
-                photo: userPhotoImage.image ?? UIImage()
+        if nameTextFiel.text == "" {
+            self.alert?.alertInformation(
+                title: "Atenção",
+                message: "Por favor informe o nome antes de adicionar"
             )
-        )
-        listContactsTableView.reloadData()
+        } else {
+            data.append(
+                Profile(
+                    name: nameTextFiel.text ?? "",
+                    photo: userPhotoImage.image ?? UIImage()
+                )
+            )
+            listContactsTableView.reloadData()
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextFiel.resignFirstResponder()
         return true
     }
- 
+    
     private func commonInit() {
         configureActions()
         configureHierarchy()
@@ -226,7 +249,6 @@ extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
 }
 
 extension PersonViewController: UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
